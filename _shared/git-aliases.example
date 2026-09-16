@@ -144,7 +144,7 @@ if type "git" >/dev/null; then
         # use VSCode if we have it
         # clunky approach, but we don't have to think about shell escaping
         if [ -x "$(command -v cursor)" ]; then
-                CURSOR_PATH="$(command -v cursor)"
+                CURSOR_PATH="$(command -v cursor) --classic"
                 echo "[Using Cursor for git merge tool]"
                 git config --global merge.tool cursor
                 git config --global mergetool.cursor.cmd "$CURSOR_PATH --wait --reuse-window \$MERGED"
