@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -auo pipefail
+
+mkdir -p _repomix
+
+for DIR in $(find . -type d -maxdepth 1 -name '[a-z]*'); do
+    (cd $DIR; repomix -o "../_repomix/repomix-$(basename $PWD).xml" );
+done
+
+ls -larth _repomix/
+
+open _repomix/

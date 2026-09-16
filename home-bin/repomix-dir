@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# if we didn't get a dir parameter, use the current dir
+if [ $# -eq 0 ]; then
+    echo "No directory parameter provided, using current directory"
+    repomix_dir=$(pwd)
+else
+    repomix_dir=$1
+fi
+
+dir_basename=$(basename "${repomix_dir}")
+
+if [ ! -d "${repomix_dir}" ]; then
+    echo "Directory not found: ${repomix_dir}"
+    exit 1
+fi
+
+repomix -o "repomix-${dir_basename}_terraform.xml" "$repomix_dir"
