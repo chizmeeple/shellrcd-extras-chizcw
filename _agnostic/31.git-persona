@@ -17,7 +17,7 @@ else
             echo "git-persona: matched Net-A-Porter";
             git config --global user.email "chisel.wright@net-a-porter.com";
             ;;
-        macbook.zoopla|Chisels-MacBook-Pro.local|*.dev.uk|chisel-zpg.local|*.eu-west-1.compute.internal|HF-*)
+        macbook.zoopla|Chisels-MacBook-Pro.local|*.dev.uk|chisel-zpg.local|*.eu-west-1.compute.internal|HF-*|ASG-*)
             echo "git-persona: matched 'Zoopla'";
             git config --global user.email "chisel.malik-wright@houseful.co.uk";
             ;;
