@@ -1,0 +1,16 @@
+# https://stackoverflow.com/a/7522866
+if ! type "bat" >/dev/null; then
+  if type "brew" >/dev/null; then
+      echo "[Installing 'bat' with 'brew']"
+      brew install bat
+  else
+      echo "bat: can't locate 'brew'; skipping installation"
+  fi
+fi
+
+# if we find it's installed when we get this far, either because we already had
+# it, or just installed it above, add an alias that defaults to using --pager
+if type "bat" >/dev/null; then
+    alias cat='bat --pager=always'
+    alias syscat='/bin/cat'
+fi
