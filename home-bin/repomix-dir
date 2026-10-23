@@ -17,4 +17,12 @@ if [ ! -d "${repomix_dir}" ]; then
     exit 1
 fi
 
+<<<<<<< Updated upstream
 repomix -o "repomix-dir_${dir_basename}.xml" "$repomix_dir"
+||||||| Stash base
+repomix -o "repomix-${dir_basename}_terraform.xml" "$repomix_dir"
+=======
+repomix -o "repomix-dir_${dir_basename}.xml" "$repomix_dir"
+open -R "repomix-dir_${dir_basename}.xml"
+
+>>>>>>> Stashed changes
